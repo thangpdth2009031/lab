@@ -16,7 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::middleware(['cors'])->group(function () {
-    Route::get('/',[ProductController::class,'index']);
-    Route::post('/store',[ProductController::class,'store']);
-});
+Route::get('/',[\App\Http\Controllers\FurnitureController::class,'index']);
+Route::post('/store',[\App\Http\Controllers\FurnitureController::class,'store']);

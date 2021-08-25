@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <header class="col-12" style="height: 70px;display: flex;justify-content: center;margin-top: 10px">
-        <a href="form.html" class="btn btn-primary" style="height: 40px">add product</a>
+        <a href="form.blade.php" class="btn btn-primary" style="height: 40px">add product</a>
     </header>
     <hr>
     <div class="content row">
@@ -31,7 +31,7 @@
                 var result = data
                 for (let i = 0; i < result.length; i++) {
                     $('.content').append(`<div class="col-4" style="padding: 5px ; border: 1px #c6c6c6 solid">
-            <img src="${result[i].thumbnail}" alt="" style="height: 250px;width: 100%;object-fit: cover">
+            <img src="${result[i].avatar}" alt="" style="height: 250px;width: 100%;object-fit: cover">
             <br>
             <h2>${result[i].name}</h2>
             <p style="color: red;font-size: 25px">price : $ ${result[i].price} </p>

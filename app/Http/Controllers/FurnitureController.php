@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 class FurnitureController extends Controller
 {
     public function index(){
-        return products::query()->orderBy('id','DESC')->get();
+        return Furniture::query()->orderBy('product-code','DESC')->get();
     }
 
 
 
     public function store(Request $request){
-//        return $request;
-        $product = new products();
+
+        $product = new Furniture();
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->thumbnail = $request->thumbnail;
+        $product->avatar = $request->avatar;
         $product->save();
         return   response()->json(
             [
