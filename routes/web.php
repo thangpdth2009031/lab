@@ -16,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/',[\App\Http\Controllers\FurnitureController::class,'index']);
-Route::post('/store',[\App\Http\Controllers\FurnitureController::class,'store']);
+Route::get('/',function () {
+    return view('form');
+});
+Route::get('/store',function () {
+    return view('list');
+});
+

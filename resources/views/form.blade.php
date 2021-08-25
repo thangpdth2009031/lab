@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label>Name:</label>
-            <input type="text" class="form-control" id="product-name" placeholder="Enter product code" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Enter product code" name="name">
         </div>
         <div class="form-group">
             <label>Price:</label>
@@ -42,9 +42,9 @@
                 url: 'http://localhost:8000/store',
                 type: 'POST',
                 data: {
-                    name: $('#product_name').val(),
+                    name: $('#name').val(),
                     price: $('#price').val(),
-                    thumbnail: $('#avatar').val(),
+                    avatar: $('#avatar').val(),
                 },
                 success: function (data) {
                     console.log(data);
@@ -57,7 +57,7 @@
     }
 
 
-    $('#thumbnail').keyup(function () {
+    $('#avatar').keyup(function () {
         $('.img_review').attr('src', $('#avatar').val())
         $('.img_review').removeClass('d-none')
     })
